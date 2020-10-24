@@ -37,13 +37,11 @@ function EDITOR:Init()
 	self.HTML:OpenURL(EDITOR_URL)
 	self.HTML:SetPos(0, 5)
 	self.HTML:SetSize(self:GetWide(), self:GetTall() - 5)
-	self.HTML:SetPaintedManually(true)
 end
 
 function EDITOR:Paint(w, h)
 	surface.SetDrawColor(0, 0, 0, 190)
 	surface.DrawRect(0, 0, w, h)
-	self.HTML:PaintManual()
 end
 
 function EDITOR:PerformLayout(w, h)
