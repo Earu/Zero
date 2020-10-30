@@ -10,6 +10,9 @@ function EDITOR:Init()
 	self:SetMinimumSize(w, 20)
 	self:SetPos(0, h)
 	self:MakePopup()
+	self.btnMinim:Hide()
+	self.btnMaxim:Hide()
+	self.btnClose:Hide()
 
 	self.CloseBtn = vgui.Create("DButton")
 	self.CloseBtn:SetSize(25, 25)
@@ -96,4 +99,4 @@ function EDITOR:OnMouseReleased()
 	self:MouseCapture(false)
 end
 
-vgui.Register("ZeroEditor", EDITOR, "Panel")
+vgui.Register("ZeroEditor", EDITOR, "DFrame")
