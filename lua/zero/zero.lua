@@ -38,4 +38,14 @@ if CLIENT then
 			Zero:ToggleEditor()
 		end
 	end)
+
+	hook.Add("CalcView", TAG, function(ply, pos, angles, fov)
+		if not IsValid(self.Editor) then return end
+		return {
+			origin = pos - ((angles:Forward() * ply:GetModelScale() * 100) + Vector(0, 0, ply:OBBMaxs().z)),
+			angles = angles,
+			fov = fov,
+			drawviewer = true
+		}
+	end)
 end
